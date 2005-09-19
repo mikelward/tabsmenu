@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+  XUL user interface overlay for Firefox Tabs Menu extension
+  Michael Wardle <michael@endbracket.net>
+-->
+
+<overlay id="tabsmenu"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+         
+  <script type="application/x-javascript"
+          src="chrome://tabsmenu/content/tabsmenu.js"/>
+        
+  <menubar id="main-menubar">
+    <menu id="tabs-menu"
+          label="Tabs"
+          accesskey="s">
+      <menupopup id="menu_TabsPopup"
+                onpopupshowing="createTabsMenu(this);"
+                onpopuphiding="destroyTabsMenu(this);">
+<!--
+        <menuitem label="New Tab"
+                  key="key_newNavigatorTab"
+                  command="cmd_newNavigatorTab"/>
+        <menuitem label="Close Tab"
+                  key="key_close"
+                  command="cmd_close"/>
+        <menuseparator/>
+        <menuitem label="Dump"
+                  onclick="dumpTabs();"/>
+        <menuseparator/>
+-->
+      </menupopup>
+    </menu>
+  </menubar>
+
+</overlay>
+
+<!-- vi: set sw=2 ts=33: -->

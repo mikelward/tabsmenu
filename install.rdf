@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  Package install information for Firefox Tabs Menu extension
+  Michael Wardle <michael@endbracket.net>
+-->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+
+    <!-- This package is an extension -->
+    <em:type>2</em:type>
+
+    <!-- This is an extension for Firefox 1.1 to 1.5 -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>1.4</em:minVersion>
+        <em:maxVersion>1.4</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- Information about this package -->
+    <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
+    <em:version>0.5</em:version>
+    <em:name>Tabs Menu</em:name>
+    <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
+    <em:creator>Michael Wardle</em:creator>
+    <em:contributor>Regis Caspar</em:contributor>
+    <em:homepageURL>http://endbracket.net/michael/projects/firefox</em:homepageURL>
+
+  </Description>      
+</RDF>
+
+<!-- vi: set sw=2 ts=33: -->
