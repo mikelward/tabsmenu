@@ -13,7 +13,8 @@
   <menubar id="main-menubar">
     <menu id="tabs-menu"
           label="Tabs"
-          accesskey="s">
+          accesskey="s"
+          insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
                 onpopupshowing="createTabsMenu(this);"
                 onpopuphiding="destroyTabsMenu(this);">

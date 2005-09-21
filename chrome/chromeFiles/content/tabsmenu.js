@@ -17,34 +17,48 @@ function selectTab(event)
 // Create the tab menuitems for the current tabs and add them to the Tabs menu
 function createTabsMenu(menuPopup)
 {
+  var menu = menuPopup;
+  var selected = gBrowser.mPanelContainer.selectedIndex;
+
   var l = gBrowser.mPanelContainer.childNodes.length;
   for(var i = 0; i < l; i++)
   {
     var browser = gBrowser.getBrowserAtIndex(i);
-    var menuItem = document.createElement("menuitem");
     var tabNumber = i + 1;
-    var accessKey = tabNumber % 10;
     var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
 
-    menuItem.setAttribute("id", "tabsmenu-tab" + i);
+    var menuItem = document.createElement("menuitem");
+    menuItem.setAttribute("id", "tabs-menu-tab" + i);
+    menuItem.setAttribute("type", "radio");
+    menuItem.setAttribute("name", "tabs-menu-tabs");
     menuItem.setAttribute("data", i);
     menuItem.setAttribute("label", tabNumber + " - " + title);
-    menuItem.setAttribute("accesskey", accessKey);
+    menuItem.setAttribute("checked", selected == i);
+
+    // Only the first ten items in the list have keyboard shortcuts
+    var accessKey = tabNumber % 10;
+    if (tabNumber <= 10)
+    {
+      menuItem.setAttribute("accesskey", accessKey);
+      //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
+    }
 
     menuItem.addEventListener("command", selectTab, false);
 
     //window.alert("Creating Tabs menu item " + tabNumber + " (" + browser.label + ")");
-    menuPopup.appendChild(menuItem);
+    menu.appendChild(menuItem);
   }
 }
 
 // Remove all tab menuitems from the Tabs menu
 function destroyTabsMenu(menuPopup)
 {
+  var menu = menuPopup;
+  //var menu = getElementById("tabs-menu-list");
   var node;
   try
   {
-    node = menuPopup.lastChild;
+    node = menu.lastChild;
   }
   catch(e)
   {
