@@ -5,10 +5,8 @@
 
 // Switch to a tab
 // The event parameter is the click event on the specific menuitem
-function selectTab(event)
+function selectTab(index)
 {
-  var index = event.target.getAttribute("data");
-
   //window.alert("Selecting tab number " + index);
   gBrowser.mTabContainer.selectedIndex = index;
   gBrowser.updateCurrentBrowser();
@@ -43,7 +41,7 @@ function createTabsMenu(menuPopup)
       //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
     }
 
-    menuItem.addEventListener("command", selectTab, false);
+    //menuItem.addEventListener("command", selectTab, false);
 
     //window.alert("Creating Tabs menu item " + tabNumber + " (" + browser.label + ")");
     menu.appendChild(menuItem);
