@@ -4,7 +4,6 @@
 //
 
 // Switch to a tab
-// The event parameter is the click event on the specific menuitem
 function selectTab(index)
 {
   //window.alert("Selecting tab number " + index);
