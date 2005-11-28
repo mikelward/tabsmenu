@@ -4,8 +4,10 @@
 //
 
 // Switch to a tab
-function selectTab(index)
+function selectTab(event)
 {
+  var index = event.target.getAttribute("data");
+
   //window.alert("Selecting tab number " + index);
   gBrowser.mTabContainer.selectedIndex = index;
   gBrowser.updateCurrentBrowser();
@@ -26,11 +28,23 @@ function createTabsMenu(menuPopup)
 
     var menuItem = document.createElement("menuitem");
     menuItem.setAttribute("id", "tabs-menu-tab" + i);
-    menuItem.setAttribute("type", "radio");
     menuItem.setAttribute("name", "tabs-menu-tabs");
     menuItem.setAttribute("data", i);
-    menuItem.setAttribute("label", tabNumber + " - " + title);
     menuItem.setAttribute("checked", selected == i);
+    menuItem.setAttribute("selected", selected == i);
+
+    if (useIcons())
+    {
+      menuItem.setAttribute("class", "menuitem-iconic");
+      menuItem.setAttribute("image", browser.mIconURL);
+    }
+    else
+    {
+      menuItem.setAttribute("class", "menuitem-radio");
+      menuItem.setAttribute("type", "radio");
+    }
+
+    menuItem.setAttribute("label", tabNumber + " - " + title);
 
     // Only the first ten items in the list have keyboard shortcuts
     var accessKey = tabNumber % 10;
@@ -40,7 +54,7 @@ function createTabsMenu(menuPopup)
       //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
     }
 
-    //menuItem.addEventListener("command", selectTab, false);
+    menuItem.addEventListener("command", selectTab, false);
 
     //window.alert("Creating Tabs menu item " + tabNumber + " (" + browser.label + ")");
     menu.appendChild(menuItem);
@@ -79,6 +93,23 @@ function destroyTabsMenu(menuPopup)
       window.alert("Failed to remove Tabs menu item");
       break;
     }
+  }
+}
+
+// Check whether tab icons should be used
+function useIcons()
+{
+  try
+  {
+    prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                      .getService(Components.interfaces.nsIPrefService)
+                      .getBranch("extensions.tabsmenu.");
+    return prefs.getBoolPref("useicons");
+  } 
+  catch (ex)
+  {
+    Components.reportError(ex);
+    return false;
   }
 }
 

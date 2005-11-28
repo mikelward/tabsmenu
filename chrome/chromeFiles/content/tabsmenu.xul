@@ -4,6 +4,7 @@
   Michael Wardle <michael@endbracket.net>
 -->
 
+<?xml-stylesheet href="chrome://tabsmenu/content/tabsmenu.css" type="text/css"?>
 <overlay id="tabsmenu"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
          
@@ -17,8 +18,7 @@
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
                 onpopupshowing="createTabsMenu(this);"
-                onpopuphiding="destroyTabsMenu(this);"
-                oncommand="selectTab(event.target.getAttribute('data'));">
+                onpopuphiding="destroyTabsMenu(this);">
 <!--
         <menuitem label="New Tab"
                   key="key_newNavigatorTab"
