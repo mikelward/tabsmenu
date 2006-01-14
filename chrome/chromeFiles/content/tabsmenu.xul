@@ -17,20 +17,17 @@
           accesskey="s"
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
-                onpopupshowing="createTabsMenu(this);"
-                onpopuphiding="destroyTabsMenu(this);">
-<!--
+                 onpopupshowing="createTabsMenu(this);"
+                 onpopuphiding="destroyTabsMenu(this);">
         <menuitem label="New Tab"
                   key="key_newNavigatorTab"
+                  accesskey="n"
                   command="cmd_newNavigatorTab"/>
         <menuitem label="Close Tab"
                   key="key_close"
+                  accesskey="c"
                   command="cmd_close"/>
-        <menuseparator/>
-        <menuitem label="Dump"
-                  onclick="dumpTabs();"/>
-        <menuseparator/>
--->
+        <menuseparator id="tabs-menu-list"/>
       </menupopup>
     </menu>
   </menubar>

@@ -4,8 +4,10 @@
 //
 
 // Switch to a tab
+//function selectTab()
 function selectTab(event)
 {
+  //window.alert("A tab was selected");
   var index = event.target.getAttribute("data");
 
   //window.alert("Selecting tab number " + index);
@@ -14,9 +16,9 @@ function selectTab(event)
 }
 
 // Create the tab menuitems for the current tabs and add them to the Tabs menu
-function createTabsMenu(menuPopup)
+function createTabsMenu()
 {
-  var menu = menuPopup;
+  var menu = document.getElementById("tabs-menu-list").parentNode;
   var selected = gBrowser.mPanelContainer.selectedIndex;
 
   var l = gBrowser.mPanelContainer.childNodes.length;
@@ -25,13 +27,12 @@ function createTabsMenu(menuPopup)
     var browser = gBrowser.getBrowserAtIndex(i);
     var tabNumber = i + 1;
     var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
-
     var menuItem = document.createElement("menuitem");
     menuItem.setAttribute("id", "tabs-menu-tab" + i);
     menuItem.setAttribute("name", "tabs-menu-tabs");
     menuItem.setAttribute("data", i);
     menuItem.setAttribute("checked", selected == i);
-    menuItem.setAttribute("selected", selected == i);
+    //menuItem.setAttribute("selected", selected == i);
 
     if (useIcons())
     {
@@ -55,6 +56,7 @@ function createTabsMenu(menuPopup)
     }
 
     menuItem.addEventListener("command", selectTab, false);
+    //menuItem.addEventListener("click", selectTab, false);
 
     //window.alert("Creating Tabs menu item " + tabNumber + " (" + browser.label + ")");
     menu.appendChild(menuItem);
@@ -62,37 +64,53 @@ function createTabsMenu(menuPopup)
 }
 
 // Remove all tab menuitems from the Tabs menu
-function destroyTabsMenu(menuPopup)
+function destroyTabsMenu()
 {
-  var menu = menuPopup;
-  //var menu = getElementById("tabs-menu-list");
-  var node;
+  var separator = document.getElementById("tabs-menu-list");
+  var parent = separator.parentNode;
+  for (var i = parent.childNodes.length - 1; i >= 0; i--)
+  {
+    var tabNumber = i + 1;
+    var node = parent.childNodes[i];
+    if (node.getAttribute("name") == "tabs-menu-tabs")
+    {
+      try
+      {
+        node.parentNode.removeChild(node);
+      }
+      catch(e)
+      {
+        logMessage("Failed to remove menu item " + tabNumber + ": " + label);
+      }
+    }
+  }
+}
+
+// Print the names of all the tabs in the current window
+function dumpTabs()
+{
+  var l = gBrowser.mPanelContainer.childNodes.length;
+  for(var i = 0; i < l; i++)
+  {
+    var browser = gBrowser.getBrowserAtIndex(i);
+    var tabNumber = i + 1;
+    var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
+    window.alert(tabNumber + ": " + title);
+  }
+}
+
+// Send a message to the system log
+function logMessage(message)
+{
   try
   {
-    node = menu.lastChild;
+    log = Components.classes["@mozilla.org/consoleservice;1"]
+                    .getService(Components.interfaces.nsIConsoleService);
+    log.logStringMessage(message);
   }
   catch(e)
   {
-    // Shouldn't get here since this is only called when the list is populated
-    window.alert("No last child, is Tabs menu empty?");
-    return;
-  }
-
-  while (node)
-  {
-    var next;
-    try
-    {
-      //window.alert("Removing Tabs menu item");
-      next = node.previousSibling;
-      node.parentNode.removeChild(node);
-      node = next;
-    }
-    catch(e)
-    {
-      window.alert("Failed to remove Tabs menu item");
-      break;
-    }
+    Components.reportError(e);
   }
 }
 
@@ -104,11 +122,11 @@ function useIcons()
     prefs = Components.classes["@mozilla.org/preferences-service;1"]
                       .getService(Components.interfaces.nsIPrefService)
                       .getBranch("extensions.tabsmenu.");
-    return prefs.getBoolPref("useicons");
+    return prefs.getBoolPref("useIcons");
   } 
-  catch (ex)
+  catch(e)
   {
-    Components.reportError(ex);
+    Components.reportError(e);
     return false;
   }
 }
