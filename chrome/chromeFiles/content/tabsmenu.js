@@ -4,13 +4,10 @@
 //
 
 // Switch to a tab
-//function selectTab()
 function selectTab(event)
 {
-  //window.alert("A tab was selected");
-  var index = event.target.getAttribute("data");
+  var index = event.target.getAttribute("value");
 
-  //window.alert("Selecting tab number " + index);
   gBrowser.mTabContainer.selectedIndex = index;
   gBrowser.updateCurrentBrowser();
 }
@@ -29,8 +26,7 @@ function createTabsMenu()
     var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
     var menuItem = document.createElement("menuitem");
     menuItem.setAttribute("id", "tabs-menu-tab" + i);
-    menuItem.setAttribute("name", "tabs-menu-tabs");
-    menuItem.setAttribute("data", i);
+    menuItem.setAttribute("value", i);
     menuItem.setAttribute("checked", selected == i);
     //menuItem.setAttribute("selected", selected == i);
 
@@ -55,10 +51,12 @@ function createTabsMenu()
       //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
     }
 
+    // XXX Why don't any of these work on Mac!?
     menuItem.addEventListener("command", selectTab, false);
+    //menuItem.setAttribute("oncommand", "selectTab();");
+    //menuItem.setAttribute("command", "selectTab();");
     //menuItem.addEventListener("click", selectTab, false);
 
-    //window.alert("Creating Tabs menu item " + tabNumber + " (" + browser.label + ")");
     menu.appendChild(menuItem);
   }
 }
@@ -72,7 +70,7 @@ function destroyTabsMenu()
   {
     var tabNumber = i + 1;
     var node = parent.childNodes[i];
-    if (node.getAttribute("name") == "tabs-menu-tabs")
+    if (node.getAttribute("value"))
     {
       try
       {
@@ -95,7 +93,7 @@ function dumpTabs()
     var browser = gBrowser.getBrowserAtIndex(i);
     var tabNumber = i + 1;
     var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
-    window.alert(tabNumber + ": " + title);
+    logMessage(tabNumber + ": " + title);
   }
 }
 
