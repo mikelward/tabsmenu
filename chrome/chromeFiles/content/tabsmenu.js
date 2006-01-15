@@ -53,6 +53,8 @@ function createTabsMenu()
       }
 
       // XXX Why don't any of these work on Mac!?
+      // XXX This is currently being handled via the "command"
+      //     attribute of the menupopup that contains the menu
       //menuItem.addEventListener("command", selectTab, false);
       //menuItem.setAttribute("oncommand", "selectTab();");
       //menuItem.setAttribute("command", "selectTab();");
