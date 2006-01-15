@@ -7,7 +7,6 @@
 function selectTab(event)
 {
   var index = event.target.getAttribute("value");
-
   gBrowser.mTabContainer.selectedIndex = index;
   gBrowser.updateCurrentBrowser();
 }
@@ -17,47 +16,50 @@ function createTabsMenu()
 {
   var menu = document.getElementById("tabs-menu-list").parentNode;
   var selected = gBrowser.mPanelContainer.selectedIndex;
-
   var l = gBrowser.mPanelContainer.childNodes.length;
   for(var i = 0; i < l; i++)
   {
     var browser = gBrowser.getBrowserAtIndex(i);
     var tabNumber = i + 1;
     var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
+
     var menuItem = document.createElement("menuitem");
-    menuItem.setAttribute("id", "tabs-menu-tab" + i);
-    menuItem.setAttribute("value", i);
-    menuItem.setAttribute("checked", selected == i);
-    //menuItem.setAttribute("selected", selected == i);
-
-    if (useIcons())
+    if (menuItem)
     {
-      menuItem.setAttribute("class", "menuitem-iconic");
-      menuItem.setAttribute("image", browser.mIconURL);
+      menuItem.setAttribute("id", "tabs-menu-tab" + i);
+      menuItem.setAttribute("value", i);
+      menuItem.setAttribute("checked", selected == i);
+      //menuItem.setAttribute("selected", selected == i);
+
+      if (useIcons())
+      {
+        menuItem.setAttribute("class", "menuitem-iconic");
+        menuItem.setAttribute("image", browser.mIconURL);
+      }
+      else
+      {
+        menuItem.setAttribute("class", "menuitem-radio");
+        menuItem.setAttribute("type", "radio");
+      }
+
+      menuItem.setAttribute("label", tabNumber + " - " + title);
+
+      // Only the first ten items in the list have keyboard shortcuts
+      var accessKey = tabNumber % 10;
+      if (tabNumber <= 10)
+      {
+        menuItem.setAttribute("accesskey", accessKey);
+        //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
+      }
+
+      // XXX Why don't any of these work on Mac!?
+      //menuItem.addEventListener("command", selectTab, false);
+      //menuItem.setAttribute("oncommand", "selectTab();");
+      //menuItem.setAttribute("command", "selectTab();");
+      //menuItem.addEventListener("click", selectTab, false);
+
+      menu.appendChild(menuItem);
     }
-    else
-    {
-      menuItem.setAttribute("class", "menuitem-radio");
-      menuItem.setAttribute("type", "radio");
-    }
-
-    menuItem.setAttribute("label", tabNumber + " - " + title);
-
-    // Only the first ten items in the list have keyboard shortcuts
-    var accessKey = tabNumber % 10;
-    if (tabNumber <= 10)
-    {
-      menuItem.setAttribute("accesskey", accessKey);
-      //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
-    }
-
-    // XXX Why don't any of these work on Mac!?
-    menuItem.addEventListener("command", selectTab, false);
-    //menuItem.setAttribute("oncommand", "selectTab();");
-    //menuItem.setAttribute("command", "selectTab();");
-    //menuItem.addEventListener("click", selectTab, false);
-
-    menu.appendChild(menuItem);
   }
 }
 
@@ -70,6 +72,7 @@ function destroyTabsMenu()
   {
     var tabNumber = i + 1;
     var node = parent.childNodes[i];
+    // XXX or maybe node.getAttribute("class") == "menuitem-radio"
     if (node.getAttribute("value"))
     {
       try
