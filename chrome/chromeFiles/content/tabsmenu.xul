@@ -18,8 +18,10 @@
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
                  onpopupshowing="createTabsMenu(this)"
-                 onpopuphiding="destroyTabsMenu(this)"
                  oncommand="selectTab(event)">
+                 <!--
+                 onpopuphiding="destroyTabsMenu(this)"
+                 -->
         <menuitem label="New Tab"
                   key="key_newNavigatorTab"
                   accesskey="n"

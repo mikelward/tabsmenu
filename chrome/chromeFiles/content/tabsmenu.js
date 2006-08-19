@@ -6,18 +6,30 @@
 // Switch to a tab
 function selectTab(event)
 {
+  //window.alert("Selecting item");
   var index = event.target.getAttribute("value");
-  gBrowser.mTabContainer.selectedIndex = index;
+  var container = gBrowser.mTabContainer;
+  if (container)
+  {
+    container.selectedIndex = index;
+  }
+  else
+  {
+    logMessage("Cannot get tab container");
+  }
   gBrowser.updateCurrentBrowser();
 }
 
 // Create the tab menuitems for the current tabs and add them to the Tabs menu
 function createTabsMenu()
 {
+  // Clear the menu before repopulating it
+  destroyTabsMenu();
+  //window.alert("Creating menu");
   var menu = document.getElementById("tabs-menu-list").parentNode;
   var selected = gBrowser.mPanelContainer.selectedIndex;
   var l = gBrowser.mPanelContainer.childNodes.length;
-  for(var i = 0; i < l; i++)
+  for (var i = 0; i < l; i++)
   {
     var browser = gBrowser.getBrowserAtIndex(i);
     var tabNumber = i + 1;
@@ -68,9 +80,11 @@ function createTabsMenu()
 // Remove all tab menuitems from the Tabs menu
 function destroyTabsMenu()
 {
+  //window.alert("Destroying menu");
   var separator = document.getElementById("tabs-menu-list");
   var parent = separator.parentNode;
-  for (var i = parent.childNodes.length - 1; i >= 0; i--)
+  var length = parent.childNodes.length;
+  for (var i = length - 1; i >= 0; i--)
   {
     var tabNumber = i + 1;
     var node = parent.childNodes[i];
@@ -93,7 +107,7 @@ function destroyTabsMenu()
 function dumpTabs()
 {
   var l = gBrowser.mPanelContainer.childNodes.length;
-  for(var i = 0; i < l; i++)
+  for (var i = 0; i < l; i++)
   {
     var browser = gBrowser.getBrowserAtIndex(i);
     var tabNumber = i + 1;
