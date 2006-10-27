@@ -1,0 +1,29 @@
+
+#tabs-menu .menuitem-iconic .menu-iconic-icon 
+{
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  list-style-image: url(chrome://global/skin/icons/folder-item.png);
+  -moz-margin-end: 3px;
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-opacity: 0.5;
+}
+
+
+#tabs-menu .menuitem-iconic 
+{
+  font-weight: normal;
+}
+
+#tabs-menu .menuitem-iconic[current="true"] .menu-iconic-icon 
+{
+  -moz-opacity: 1;
+}
+
+#tabs-menu .menuitem-iconic[current="true"] 
+{
+  font-weight: bold;
+}
+
+/* vi: set sw=2 ts=33: */
