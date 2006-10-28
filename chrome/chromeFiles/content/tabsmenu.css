@@ -7,18 +7,12 @@
   list-style-image: url(chrome://global/skin/icons/folder-item.png);
   -moz-margin-end: 3px;
   -moz-image-region: rect(0px, 16px, 16px, 0px);
-  -moz-opacity: 0.5;
 }
 
 
 #tabs-menu .menuitem-iconic 
 {
   font-weight: normal;
-}
-
-#tabs-menu .menuitem-iconic[current="true"] .menu-iconic-icon 
-{
-  -moz-opacity: 1;
 }
 
 #tabs-menu .menuitem-iconic[current="true"] 
