@@ -17,16 +17,16 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>1.0</em:minVersion>
-        <em:maxVersion>2.0</em:maxVersion>
+        <em:maxVersion>2.0.0.*</em:maxVersion>
       </Description>
     </em:targetApplication>
 
     <!-- Information about this package -->
     <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
-    <em:version>0.8.1</em:version>
+    <em:version>0.8.2</em:version>
     <em:name>Tabs Menu</em:name>
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
-    <em:creator>Michael Wardle</em:creator>
+    <em:creator>Mikel Ward</em:creator>
     <em:contributor>Regis Caspar</em:contributor>
     <em:homepageURL>http://endbracket.net/michael/projects/firefox</em:homepageURL>
 

@@ -40,18 +40,18 @@ function createTabsMenu()
     {
       menuItem.setAttribute("id", "tabs-menu-tab" + i);
       menuItem.setAttribute("value", i);
-      menuItem.setAttribute("checked", selected == i);
-      //menuItem.setAttribute("selected", selected == i);
 
       if (useIcons())
       {
         menuItem.setAttribute("class", "menuitem-iconic");
         menuItem.setAttribute("image", browser.mIconURL);
+        menuItem.setAttribute("current", selected == i);
       }
       else
       {
         menuItem.setAttribute("class", "menuitem-radio");
         menuItem.setAttribute("type", "radio");
+        menuItem.setAttribute("checked", selected == i);
       }
 
       menuItem.setAttribute("label", tabNumber + " - " + title);
