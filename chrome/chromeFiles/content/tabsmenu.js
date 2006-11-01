@@ -54,7 +54,14 @@ function createTabsMenu()
         menuItem.setAttribute("checked", selected == i);
       }
 
-      menuItem.setAttribute("label", tabNumber + " - " + title);
+      if (titlesOnly())
+      {
+        menuItem.setAttribute("label", title);
+      }
+      else
+      {
+        menuItem.setAttribute("label", tabNumber + " - " + title);
+      }
 
       // Only the first ten items in the list have keyboard shortcuts
       var accessKey = tabNumber % 10;
@@ -131,7 +138,51 @@ function logMessage(message)
   }
 }
 
-// Check whether tab icons should be used
+// Check whether the user wants only the tabs to appear in the
+// drop-down list (true) or whether we add some generic actions
+// such as New Tab and Close tab to the top of the drop-down
+// (false).
+function tabsOnly()
+{
+  try
+  {
+    prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                      .getService(Components.interfaces.nsIPrefService)
+                      .getBranch("extensions.tabsmenu.");
+    return prefs.getBoolPref("tabsonly");
+  } 
+  catch(e)
+  {
+    Components.reportError(e);
+    return false;
+  }
+}
+
+// Check whether the user wants the tab menu items to be only the
+// page title (true) or the page title prefixed with the tab's
+// index number (false).
+//
+// For example:
+// 1 - Google (false)
+// Google (true)
+function titlesOnly()
+{
+  try
+  {
+    prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                      .getService(Components.interfaces.nsIPrefService)
+                      .getBranch("extensions.tabsmenu.");
+    return prefs.getBoolPref("titlesonly");
+  } 
+  catch(e)
+  {
+    Components.reportError(e);
+    return false;
+  }
+}
+
+// Check whether the user wants to see each page's icon (true) or
+// a radio button (false) next to the title in the menu
 function useIcons()
 {
   try
