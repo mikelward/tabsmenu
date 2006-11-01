@@ -18,20 +18,7 @@
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
                  onpopupshowing="createTabsMenu(this)"
-                 oncommand="selectTab(event)">
-                 <!--
-                 onpopuphiding="destroyTabsMenu(this)"
-                 -->
-        <menuitem label="New Tab"
-                  key="key_newNavigatorTab"
-                  accesskey="n"
-                  command="cmd_newNavigatorTab"/>
-        <menuitem label="Close Tab"
-                  key="key_close"
-                  accesskey="c"
-                  command="cmd_close"/>
-        <menuseparator id="tabs-menu-list"/>
-      </menupopup>
+                 oncommand="selectTab(event)" />
     </menu>
   </menubar>
 

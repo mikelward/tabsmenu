@@ -26,7 +26,40 @@ function createTabsMenu()
   // Clear the menu before repopulating it
   destroyTabsMenu();
   //window.alert("Creating menu");
-  var menu = document.getElementById("tabs-menu-list").parentNode;
+  var menu = document.getElementById("menu_TabsPopup");
+  if (!menu)
+  {
+    return false;
+  }
+
+  if (showActions())
+  {
+    // Add the separator to the empty menu
+    var actionSeparator = document.createElement("menuseparator");
+    if (actionSeparator)
+    {
+      menu.appendChild(actionSeparator);
+      var newItem = document.createElement("menuitem");
+      if (newItem)
+      {
+        newItem.setAttribute("label", "New Tab");
+        newItem.setAttribute("key", "key_newNavigatorTab");
+        newItem.setAttribute("command", "cmd_newNavigatorTab");
+        newItem.setAttribute("accesskey", "n");
+      }
+      menu.insertBefore(newItem, actionSeparator);
+      var closeItem = document.createElement("menuitem");
+      if (closeItem)
+      {
+        closeItem.setAttribute("label", "Close Tab");
+        closeItem.setAttribute("key", "key_close");
+        closeItem.setAttribute("command", "cmd_close");
+        closeItem.setAttribute("accesskey", "c");
+      }
+      menu.insertBefore(closeItem, actionSeparator);
+    }
+  }
+
   var selected = gBrowser.mPanelContainer.selectedIndex;
   var l = gBrowser.mPanelContainer.childNodes.length;
   for (var i = 0; i < l; i++)
@@ -41,7 +74,7 @@ function createTabsMenu()
       menuItem.setAttribute("id", "tabs-menu-tab" + i);
       menuItem.setAttribute("value", i);
 
-      if (useIcons())
+      if (showIcons())
       {
         menuItem.setAttribute("class", "menuitem-iconic");
         menuItem.setAttribute("image", browser.mIconURL);
@@ -54,21 +87,21 @@ function createTabsMenu()
         menuItem.setAttribute("checked", selected == i);
       }
 
-      if (titlesOnly())
+      if (showShortcuts())
       {
-        menuItem.setAttribute("label", title);
+        menuItem.setAttribute("label", tabNumber + " - " + title);
+
+        // Only the first ten items in the list have keyboard shortcuts
+        var accessKey = tabNumber % 10;
+        if (tabNumber <= 10)
+        {
+          menuItem.setAttribute("accesskey", accessKey);
+          //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
+        }
       }
       else
       {
-        menuItem.setAttribute("label", tabNumber + " - " + title);
-      }
-
-      // Only the first ten items in the list have keyboard shortcuts
-      var accessKey = tabNumber % 10;
-      if (tabNumber <= 10)
-      {
-        menuItem.setAttribute("accesskey", accessKey);
-        //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
+        menuItem.setAttribute("label", title);
       }
 
       // XXX Why don't any of these work on Mac!?
@@ -88,25 +121,24 @@ function createTabsMenu()
 function destroyTabsMenu()
 {
   //window.alert("Destroying menu");
-  var separator = document.getElementById("tabs-menu-list");
-  var parent = separator.parentNode;
-  var length = parent.childNodes.length;
+  var menu = document.getElementById("menu_TabsPopup");
+  var length = menu.childNodes.length;
   for (var i = length - 1; i >= 0; i--)
   {
     var tabNumber = i + 1;
-    var node = parent.childNodes[i];
+    var node = menu.childNodes[i];
     // XXX or maybe node.getAttribute("class") == "menuitem-radio"
-    if (node.getAttribute("value"))
-    {
+    //if (node.getAttribute("value"))
+    //{
       try
       {
-        node.parentNode.removeChild(node);
+        menu.removeChild(node);
       }
       catch(e)
       {
         logMessage("Failed to remove menu item " + tabNumber + ": " + label);
       }
-    }
+    //}
   }
 }
 
@@ -138,18 +170,16 @@ function logMessage(message)
   }
 }
 
-// Check whether the user wants only the tabs to appear in the
-// drop-down list (true) or whether we add some generic actions
-// such as New Tab and Close tab to the top of the drop-down
-// (false).
-function tabsOnly()
+// Check whether the user wants actions such as New Tab and
+// Close Tab to appear in the drop-down list.
+function showActions()
 {
   try
   {
     prefs = Components.classes["@mozilla.org/preferences-service;1"]
                       .getService(Components.interfaces.nsIPrefService)
                       .getBranch("extensions.tabsmenu.");
-    return prefs.getBoolPref("tabsonly");
+    return prefs.getBoolPref("showactions");
   } 
   catch(e)
   {
@@ -158,21 +188,16 @@ function tabsOnly()
   }
 }
 
-// Check whether the user wants the tab menu items to be only the
-// page title (true) or the page title prefixed with the tab's
-// index number (false).
-//
-// For example:
-// 1 - Google (false)
-// Google (true)
-function titlesOnly()
+// Check whether the user wants to see each page's icon next to
+// the title in the menu.  If not, we show a radio button.
+function showIcons()
 {
   try
   {
     prefs = Components.classes["@mozilla.org/preferences-service;1"]
                       .getService(Components.interfaces.nsIPrefService)
                       .getBranch("extensions.tabsmenu.");
-    return prefs.getBoolPref("titlesonly");
+    return prefs.getBoolPref("showicons");
   } 
   catch(e)
   {
@@ -181,16 +206,17 @@ function titlesOnly()
   }
 }
 
-// Check whether the user wants to see each page's icon (true) or
-// a radio button (false) next to the title in the menu
-function useIcons()
+// Check whether the user wants the tab's title to be prefixed
+// with a number indicating the keyboard shortcut to select that
+// tab.
+function showShortcuts()
 {
   try
   {
     prefs = Components.classes["@mozilla.org/preferences-service;1"]
                       .getService(Components.interfaces.nsIPrefService)
                       .getBranch("extensions.tabsmenu.");
-    return prefs.getBoolPref("useIcons");
+    return prefs.getBoolPref("showshortcuts");
   } 
   catch(e)
   {

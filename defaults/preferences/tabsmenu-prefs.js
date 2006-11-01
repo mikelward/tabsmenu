@@ -1,3 +1,3 @@
-pref("extensions.tabsmenu.useIcons", false);
-pref("extensions.tabsmenu.tabsonly", false);
-pref("extensions.tabsmenu.titlesonly", false);
+pref("extensions.tabsmenu.showactions", false);
+pref("extensions.tabsmenu.showicons", true);
+pref("extensions.tabsmenu.showshortcuts", false);
