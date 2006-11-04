@@ -28,7 +28,7 @@
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
     <em:contributor>Regis Caspar</em:contributor>
-    <em:homepageURL>http://endbracket.net/michael/projects/firefox</em:homepageURL>
+    <em:homepageURL>http://mikelward.com/projects/firefox</em:homepageURL>
 
     <em:file>
       <Description about="urn:mozilla:extension:file:chromeFiles">
