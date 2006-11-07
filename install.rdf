@@ -28,6 +28,7 @@
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
     <em:contributor>Régis Caspar</em:contributor>
+    <em:translator>Okaryn</em:translator>
     <em:homepageURL>http://mikelward.com/projects/firefox</em:homepageURL>
 
     <em:file>
@@ -36,6 +37,7 @@
         <em:locale>locale/de-DE/</em:locale>
         <em:locale>locale/en-US/</em:locale>
         <em:locale>locale/es-ES/</em:locale>
+        <em:locale>locale/fr-FR/</em:locale>
       </Description>
     </em:file>
 
