@@ -1,4 +1,5 @@
 content tabsmenu chrome/chromeFiles/content/
 overlay chrome://browser/content/browser.xul chrome://tabsmenu/content/tabsmenu.xul
-locale tabsmenu en-US chrome/chromeFiles/locale/en-US/
 locale tabsmenu de-DE chrome/chromeFiles/locale/de-DE/
+locale tabsmenu en-US chrome/chromeFiles/locale/en-US/
+locale tabsmenu es-ES chrome/chromeFiles/locale/es-ES/

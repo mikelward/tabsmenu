@@ -35,6 +35,7 @@
         <em:package>content/</em:package>
         <em:locale>locale/de-DE/</em:locale>
         <em:locale>locale/en-US/</em:locale>
+        <em:locale>locale/es-ES/</em:locale>
       </Description>
     </em:file>
 
