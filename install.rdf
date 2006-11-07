@@ -42,6 +42,7 @@
         <em:locale>locale/it-IT/</em:locale>
         <em:locale>locale/nl-NL/</em:locale>
         <em:locale>locale/pt-PT/</em:locale>
+        <em:locale>locale/tr-TR/</em:locale>
       </Description>
     </em:file>
 
