@@ -2,13 +2,13 @@
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
 
     <RDF:Seq about="urn:mozilla:locale:root">
-        <RDF:li resource="urn:mozilla:locale:da-DA" />
+        <RDF:li resource="urn:mozilla:locale:da-DK" />
     </RDF:Seq>
 
-    <RDF:Description RDF:about="urn:mozilla:locale:da-DA" chrome:name="da-DA">
+    <RDF:Description RDF:about="urn:mozilla:locale:da-DK" chrome:name="da-DK">
         <chrome:packages>
-            <RDF:Seq RDF:about="urn:mozilla:locale:da-DA:packages">
-                <RDF:li RDF:resource="urn:mozilla:locale:da-DA:tabsmenu" />
+            <RDF:Seq RDF:about="urn:mozilla:locale:da-DK:packages">
+                <RDF:li RDF:resource="urn:mozilla:locale:da-DK:tabsmenu" />
             </RDF:Seq>
         </chrome:packages>
     </RDF:Description>
