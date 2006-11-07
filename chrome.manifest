@@ -3,3 +3,5 @@ overlay chrome://browser/content/browser.xul chrome://tabsmenu/content/tabsmenu.
 locale tabsmenu de-DE chrome/chromeFiles/locale/de-DE/
 locale tabsmenu en-US chrome/chromeFiles/locale/en-US/
 locale tabsmenu es-ES chrome/chromeFiles/locale/es-ES/
+locale tabsmenu fi-FI chrome/chromeFiles/locale/fi-FI/
+locale tabsmenu nl-NL chrome/chromeFiles/locale/nl-NL/
