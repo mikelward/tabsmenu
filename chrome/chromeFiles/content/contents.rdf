@@ -12,8 +12,8 @@
         chrome:description="Adds a Tabs menu to the main menu"
         chrome:displayName="Tabs Menu"
         chrome:extension="true"
-        chrome:author="Michael Wardle"
-        chrome:authorURL="http://endbracket.net/michael">
+        chrome:author="Mikel Ward"
+        chrome:authorURL="http://mikelward.com/projects/firefox">
   </RDF:Description>
 
   <RDF:Seq RDF:about="urn:mozilla:overlays">

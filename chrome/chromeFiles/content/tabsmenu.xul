@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
+<?xml-stylesheet href="chrome://tabsmenu/content/tabsmenu.css" type="text/css"?>
+
 <!--
   XUL user interface overlay for Firefox Tabs Menu extension
-  Michael Wardle <michael@endbracket.net>
+  Mikel Ward <mikel@mikelward.com>
 -->
 
-<?xml-stylesheet href="chrome://tabsmenu/content/tabsmenu.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tabsmenu/content/tabsmenu.dtd">
+
 <overlay id="tabsmenu"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-         
+
   <script type="application/x-javascript"
           src="chrome://tabsmenu/content/tabsmenu.js"/>
-        
+
   <menubar id="main-menubar">
     <menu id="tabs-menu"
-          label="Tabs"
+          label="&tabs-menu.label;"
           accesskey="a"
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"

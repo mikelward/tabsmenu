@@ -31,6 +31,22 @@ function createTabsMenu()
 {
   // Clear the menu before repopulating it
   destroyTabsMenu();
+
+  // Get strings for the user's locale
+  //window.alert("Getting strings");
+  var tbstringbundle;
+  if (gBrowser)
+  {
+    try
+    {
+      tbstringbundle = gBrowser.mStringBundle;
+    }
+    catch (e)
+    {
+      logMessage("Cannot get strings");
+    }
+  }
+
   //window.alert("Creating menu");
   var menu = document.getElementById("menu_TabsPopup");
   if (menu)
@@ -87,7 +103,14 @@ function createTabsMenu()
           if (browser)
           {
             var tabNumber = i + 1;
-            var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
+            var defaultTitle;
+            if (tbstringbundle)
+            {
+              defaultTitle = tbstringbundle.getString("tabs.untitled");
+            }
+            defaultTitle = (defaultTitle) ? defaultTitle : "(Untitled)";
+
+            var title = (browser.contentTitle) ? browser.contentTitle : defaultTitle;
 
             var menuItem = document.createElement("menuitem");
             if (menuItem)

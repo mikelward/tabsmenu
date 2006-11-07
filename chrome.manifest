@@ -1,2 +1,3 @@
 content tabsmenu chrome/chromeFiles/content/
 overlay chrome://browser/content/browser.xul chrome://tabsmenu/content/tabsmenu.xul
+locale tabsmenu en-US chrome/chromeFiles/locale/
