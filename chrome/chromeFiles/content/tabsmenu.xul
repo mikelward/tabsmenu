@@ -17,7 +17,7 @@
   <menubar id="main-menubar">
     <menu id="tabs-menu"
           label="&tabs-menu.label;"
-          accesskey="a"
+          accesskey="&tabs-menu.accesskey;"
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
                  onpopupshowing="createTabsMenu(this)"
