@@ -33,7 +33,7 @@
     <em:file>
       <Description about="urn:mozilla:extension:file:chromeFiles">
         <em:package>content/</em:package>
-        <em:locale>locale/da-DA/</em:locale>
+        <em:locale>locale/da-DK/</em:locale>
         <em:locale>locale/de-DE/</em:locale>
         <em:locale>locale/en-US/</em:locale>
         <em:locale>locale/es-ES/</em:locale>
