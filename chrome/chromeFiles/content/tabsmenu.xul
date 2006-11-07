@@ -6,7 +6,7 @@
   Mikel Ward <mikel@mikelward.com>
 -->
 
-<!DOCTYPE overlay SYSTEM "chrome://tabsmenu/content/tabsmenu.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://tabsmenu/locale/tabsmenu.dtd">
 
 <overlay id="tabsmenu"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
