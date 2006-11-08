@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 
+<!DOCTYPE prefwindow SYSTEM "chrome://tabsmenu/locale/tabsmenu-prefs.dtd">
+
 <prefwindow id="tabsmenu-prefwindow"
             xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-            title="Tabs Menu Options"
+            title="&tabsmenu-prefwindow.title;"
             buttons="accept,cancel">
+
   <prefpane>
     <preferences>
       <preference id="tabsmenu-showicons"
@@ -18,22 +21,22 @@
                   type="bool" />
     </preferences>
       <groupbox>
-        <caption label="Show Commands" />
+        <caption label="&tabsmenu-prefwindow.showactions;" />
         <checkbox label="New Tab" preference="tabsmenu-showactions" />
         <checkbox label="Close Tab" preference="tabsmenu-showactions" />
       </groupbox>
       <groupbox>
-        <caption label="Menu Style" />
+        <caption label="&tabsmenu-prefwindow.menustyle;" />
         <radiogroup preference="tabsmenu-showicons">
-          <radio label="Page Icons" value="true" />
-          <radio label="Radio Buttons" value="false" />
+          <radio label="&tabsmenu-prefwindow.pageicons;" value="true" />
+          <radio label="&tabsmenu-prefwindow.radiobuttons;" value="false" />
         </radiogroup>
       </groupbox>
       <groupbox>
-        <caption label="Numeric Keyboard Shortcuts" />
+        <caption label="&tabsmenu-prefwindow.showshortcuts;" />
         <radiogroup preference="tabsmenu-showshortcuts">
-          <radio label="On" value="true" />
-          <radio label="Off" value="false" />
+          <radio label="&tabsmenu-prefwindow.enabled;" value="true" />
+          <radio label="&tabsmenu-prefwindow.disabled;" value="false" />
       </radiogroup>
     </groupbox>
   </prefpane>
