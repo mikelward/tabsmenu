@@ -6,6 +6,7 @@ locale tabsmenu en-US chrome/chromeFiles/locale/en-US/
 locale tabsmenu es-ES chrome/chromeFiles/locale/es-ES/
 locale tabsmenu fi-FI chrome/chromeFiles/locale/fi-FI/
 locale tabsmenu fr-FR chrome/chromeFiles/locale/fr-FR/
+locale tabsmenu hr-HR chrome/chromeFiles/locale/hr-HR/
 locale tabsmenu hu-HU chrome/chromeFiles/locale/hu-HU/
 locale tabsmenu it-IT chrome/chromeFiles/locale/it-IT/
 locale tabsmenu nl-NL chrome/chromeFiles/locale/nl-NL/
