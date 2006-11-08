@@ -13,7 +13,26 @@ selectTab: function(event)
   var target = event.target;
   if (target)
   {
-    var index = event.target.getAttribute("value");
+    /* Debugging to understand how the Mac version handles events differently */
+    /*
+    try
+    {
+      tabsmenu.logMessage(target.id + ".value" + "=" + target.value);
+      tabsmenu.logMessage(target.id + ".nodeValue" + "=" + target.nodeValue);
+      var l = target.attributes.length;
+      for (var i = 0; i < l; i++)
+      {
+        var name = target.attributes[i].name;
+        var value = target.attributes[i].value;
+        tabsmenu.logMessage(target.id + ".attributes[" + name + "]=" + value);
+      }
+    }
+    */
+    catch (e)
+    {
+      tabsmenu.logMessage("Cannot read attributes of event target");
+    }
+    var index = target.getAttribute("value");
     if (index)
     {
       if (gBrowser)
