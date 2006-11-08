@@ -3,8 +3,10 @@
 // Mikel Ward <mikel@mikelward.com>
 //
 
+var tabsmenu = {
+
 // Switch to a tab
-function selectTab(event)
+selectTab: function(event)
 {
   //window.alert("Selecting item");
   var index = event.target.getAttribute("value");
@@ -17,20 +19,20 @@ function selectTab(event)
     }
     else
     {
-      logMessage("Cannot get tab container");
+      tabsmenu.logMessage("Cannot get tab container");
     }
   }
   else
   {
-    logMessage("Cannot get global browser");
+    tabsmenu.logMessage("Cannot get global browser");
   }
-}
+},
 
 // Create the tab menuitems for the current tabs and add them to the Tabs menu
-function createTabsMenu()
+createTabsMenu: function()
 {
   // Clear the menu before repopulating it
-  destroyTabsMenu();
+  tabsmenu.destroyTabsMenu();
 
   // Get strings for the user's locale
   //window.alert("Getting strings");
@@ -43,7 +45,7 @@ function createTabsMenu()
     }
     catch (e)
     {
-      logMessage("Cannot get strings");
+      tabsmenu.logMessage("Cannot get strings");
     }
   }
 
@@ -51,7 +53,7 @@ function createTabsMenu()
   var menu = document.getElementById("menu_TabsPopup");
   if (menu)
   {
-    if (showActions())
+    if (tabsmenu.showActions())
     {
       // Add the separator to the empty menu
       var actionSeparator = document.createElement("menuseparator");
@@ -69,7 +71,7 @@ function createTabsMenu()
         }
         else
         {
-          logMessage("Cannot create New Tab item");
+          tabsmenu.logMessage("Cannot create New Tab item");
         }
         var closeItem = document.createElement("menuitem");
         if (closeItem)
@@ -82,12 +84,12 @@ function createTabsMenu()
         }
         else
         {
-          logMessage("Cannot create Close Tab item");
+          tabsmenu.logMessage("Cannot create Close Tab item");
         }
       }
       else
       {
-        logMessage("Cannot get menu separator");
+        tabsmenu.logMessage("Cannot get menu separator");
       }
     }
 
@@ -118,7 +120,7 @@ function createTabsMenu()
               menuItem.setAttribute("id", "tabs-menu-tab" + i);
               menuItem.setAttribute("value", i);
 
-              if (useIcons())
+              if (tabsmenu.showIcons())
               {
                 menuItem.setAttribute("class", "menuitem-iconic");
                 menuItem.setAttribute("image", browser.mIconURL);
@@ -131,7 +133,7 @@ function createTabsMenu()
                 menuItem.setAttribute("checked", selected == i);
               }
 
-              if (showShortcuts())
+              if (tabsmenu.showShortcuts())
               {
                 menuItem.setAttribute("label", tabNumber + " - " + title);
 
@@ -160,33 +162,33 @@ function createTabsMenu()
             }
             else
             {
-              logMessage("Cannot create menu item");
+              tabsmenu.logMessage("Cannot create menu item");
             }
           }
           else
           {
-            logMessage("Cannot get current browser");
+            tabsmenu.logMessage("Cannot get current browser");
           }
         }
       }
       else
       {
-        logMessage("Cannot get panel container");
+        tabsmenu.logMessage("Cannot get panel container");
       }
     }
     else
     {
-      logMessage("Cannot get global browser");
+      tabsmenu.logMessage("Cannot get global browser");
     }
   }
   else
   {
-    logMessage("Cannot get menu root");
+    tabsmenu.logMessage("Cannot get menu root");
   }
-}
+},
 
 // Remove all tab menuitems from the Tabs menu
-function destroyTabsMenu()
+destroyTabsMenu: function()
 {
   //window.alert("Destroying menu");
   var menu = document.getElementById("menu_TabsPopup");
@@ -203,18 +205,18 @@ function destroyTabsMenu()
       }
       catch(e)
       {
-        logMessage("Failed to remove menu item " + tabNumber + ": " + label);
+        tabsmenu.logMessage("Failed to remove menu item " + tabNumber + ": " + label);
       }
     }
   }
   else
   {
-    logMessage("Cannot get menu root");
+    tabsmenu.logMessage("Cannot get menu root");
   }
-}
+},
 
 // Print the names of all the tabs in the current window
-function dumpTabs()
+dumpTabs: function()
 {
   if (gBrowser)
   {
@@ -226,22 +228,22 @@ function dumpTabs()
         var browser = gBrowser.getBrowserAtIndex(i);
         var tabNumber = i + 1;
         var title = (browser.contentTitle) ? browser.contentTitle : "(Untitled)";
-        logMessage(tabNumber + ": " + title);
+        tabsmenu.logMessage(tabNumber + ": " + title);
       }
     }
     else
     {
-      logMessage("Cannot get panel container");
+      tabsmenu.logMessage("Cannot get panel container");
     }
   }
   else
   {
-    logMessage("Cannot get global browser");
+    tabsmenu.logMessage("Cannot get global browser");
   }
-}
+},
 
 // Send a message to the system log
-function logMessage(message)
+logMessage: function(message)
 {
   try
   {
@@ -253,11 +255,11 @@ function logMessage(message)
   {
     Components.reportError(e);
   }
-}
+},
 
 // Check whether the user wants actions such as New Tab and
 // Close Tab to appear in the drop-down list.
-function showActions()
+showActions: function()
 {
   try
   {
@@ -271,11 +273,11 @@ function showActions()
     Components.reportError(e);
     return false;
   }
-}
+},
 
 // Check whether the user wants to see each page's icon next to
 // the title in the menu.  If not, we show a radio button.
-function useIcons()
+showIcons: function()
 {
   try
   {
@@ -289,12 +291,12 @@ function useIcons()
     Components.reportError(e);
     return false;
   }
-}
+},
 
 // Check whether the user wants the tab's title to be prefixed
 // with a number indicating the keyboard shortcut to select that
 // tab.
-function showShortcuts()
+showShortcuts: function()
 {
   try
   {
@@ -308,6 +310,8 @@ function showShortcuts()
     Components.reportError(e);
     return false;
   }
+}
+
 }
 
 // vi: set sw=2 ts=33:

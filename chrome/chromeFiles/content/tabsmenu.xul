@@ -20,8 +20,8 @@
           accesskey="&tabs-menu.accesskey;"
           insertafter="tools-menu">
       <menupopup id="menu_TabsPopup"
-                 onpopupshowing="createTabsMenu(this)"
-                 oncommand="selectTab(event)" />
+                 onpopupshowing="tabsmenu.createTabsMenu(this)"
+                 oncommand="tabsmenu.selectTab(event)" />
     </menu>
   </menubar>
 
