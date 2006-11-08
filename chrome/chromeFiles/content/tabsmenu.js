@@ -3,28 +3,44 @@
 // Mikel Ward <mikel@mikelward.com>
 //
 
+// Fake namespace
 var tabsmenu = {
 
 // Switch to a tab
 selectTab: function(event)
 {
   //window.alert("Selecting item");
-  var index = event.target.getAttribute("value");
-  if (gBrowser)
+  var target = event.target;
+  if (target)
   {
-    var container = gBrowser.mTabContainer;
-    if (container)
+    var index = event.target.getAttribute("value");
+    if (index)
     {
-      container.selectedIndex = index;
+      if (gBrowser)
+      {
+        var container = gBrowser.mTabContainer;
+        if (container)
+        {
+          container.selectedIndex = index;
+        }
+        else
+        {
+          tabsmenu.logMessage("Cannot get tab container");
+        }
+      }
+      else
+      {
+        tabsmenu.logMessage("Cannot get global browser");
+      }
     }
     else
     {
-      tabsmenu.logMessage("Cannot get tab container");
+      tabsmenu.logMessage("Cannot get tab index");
     }
   }
   else
   {
-    tabsmenu.logMessage("Cannot get global browser");
+    tabsmenu.logMessage("Cannot get event target");
   }
 },
 
