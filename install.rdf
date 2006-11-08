@@ -23,7 +23,7 @@
 
     <!-- Information about this package -->
     <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
-    <em:version>1.1.1</em:version>
+    <em:version>1.2</em:version>
     <em:name>Tabs Menu</em:name>
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
@@ -32,6 +32,7 @@
     <em:translator>Krcko (hr-HR)</em:translator>
     <em:translator>markh (nl-NL)</em:translator>
     <em:translator>wladow (sk-SK)</em:translator>
+    <em:optionsURL>chrome://tabsmenu/content/tabsmenu-prefs.xul</em:optionsURL>
     <em:homepageURL>http://mikelward.com/projects/firefox</em:homepageURL>
 
     <em:file>
