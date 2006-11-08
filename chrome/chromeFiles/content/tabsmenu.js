@@ -1,6 +1,6 @@
 //
 // JavaScript functions for Firefox Tabs Menu extension
-// Michael Wardle <michael@endbracket.net>
+// Mikel Ward <mikel@mikelward.com>
 //
 
 // Switch to a tab
