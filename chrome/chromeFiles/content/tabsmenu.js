@@ -27,11 +27,11 @@ selectTab: function(event)
         tabsmenu.logMessage(target.id + ".attributes[" + name + "]=" + value);
       }
     }
-    */
     catch (e)
     {
       tabsmenu.logMessage("Cannot read attributes of event target");
     }
+    */
     var index = target.getAttribute("value");
     if (index)
     {
