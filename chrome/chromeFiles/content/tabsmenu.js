@@ -158,6 +158,11 @@ createTabsMenu: function()
                 menuItem.setAttribute("label", title);
               }
 
+              if (tab.hasAttribute("busy"))
+              {
+                menuItem.setAttribute("busy", tab.getAttribute("busy"));
+              }
+
               menuItem.addEventListener("command", tabsmenu.selectTab, false);
 
               menu.appendChild(menuItem);

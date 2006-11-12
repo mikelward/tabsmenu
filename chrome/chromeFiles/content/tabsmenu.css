@@ -9,6 +9,10 @@
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
+#tabs-menu .menuitem-iconic[busy] .menu-iconic-icon
+{
+  list-style-image: url("chrome://global/skin/throbber/Throbber-small.gif") !important;
+}
 
 #tabs-menu .menuitem-iconic 
 {
