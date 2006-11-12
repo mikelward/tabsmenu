@@ -13,25 +13,6 @@ selectTab: function(event)
   var target = event.target;
   if (target)
   {
-    /* Debugging to understand how the Mac version handles events differently */
-    /*
-    try
-    {
-      tabsmenu.logMessage(target.id + ".value" + "=" + target.value);
-      tabsmenu.logMessage(target.id + ".nodeValue" + "=" + target.nodeValue);
-      var l = target.attributes.length;
-      for (var i = 0; i < l; i++)
-      {
-        var name = target.attributes[i].name;
-        var value = target.attributes[i].value;
-        tabsmenu.logMessage(target.id + ".attributes[" + name + "]=" + value);
-      }
-    }
-    catch (e)
-    {
-      tabsmenu.logMessage("Cannot read attributes of event target");
-    }
-    */
     var index = target.getAttribute("value");
     if (index)
     {
@@ -130,39 +111,17 @@ createTabsMenu: function()
 
     if (gBrowser)
     {
-      if (gBrowser.mPanelContainer)
+      if (gBrowser.mTabContainer)
       {
-        var selected = gBrowser.mPanelContainer.selectedIndex;
-        var l = gBrowser.mPanelContainer.childNodes.length;
-        for (var i = 0; i < l; i++)
+        var tabs = gBrowser.mTabContainer.childNodes;
+        var l = tabs.length;
+        for (var i = 0; i < tabs.length; i++)
         {
-          var browser = gBrowser.getBrowserAtIndex(i);
-          if (browser)
+          var tab = tabs[i];
+          if (tab)
           {
             var tabNumber = i + 1;
-            var title;
-            if (browser.contentTitle)
-            {
-              title = browser.contentTitle;
-            }
-            else if (browser.currentURI)
-            {
-              title = browser.currentURI.spec;
-            }
-
-            if (!title || title == "about:blank")
-            {
-              var defaultTitle = "(Untitled)";
-              if (tbstringbundle)
-              {
-                var defaultTitle = tbstringbundle.getString("tabs.untitled");
-                if (!defaultTitle)
-                {
-                  tabsmenu.logMessage("Cannot looking tabs.untitled string");
-                }
-              }
-              title = defaultTitle;
-            }
+            var title = tab.getAttribute("label");
 
             var menuItem = document.createElement("menuitem");
             if (menuItem)
@@ -173,14 +132,14 @@ createTabsMenu: function()
               if (tabsmenu.showIcons())
               {
                 menuItem.setAttribute("class", "menuitem-iconic");
-                menuItem.setAttribute("image", browser.mIconURL);
-                menuItem.setAttribute("current", selected == i);
+                menuItem.setAttribute("image", tab.getAttribute("image"));
+                menuItem.setAttribute("current", tab.getAttribute("selected"));
               }
               else
               {
                 menuItem.setAttribute("class", "menuitem-radio");
                 menuItem.setAttribute("type", "radio");
-                menuItem.setAttribute("checked", selected == i);
+                menuItem.setAttribute("checked", tab.getAttribute("selected"));
               }
 
               if (tabsmenu.showShortcuts())
@@ -192,7 +151,6 @@ createTabsMenu: function()
                 if (tabNumber <= 10)
                 {
                   menuItem.setAttribute("accesskey", accessKey);
-                  //menuItem.setAttribute("acceltext", "Alt+" + accessKey);
                 }
               }
               else
@@ -200,13 +158,7 @@ createTabsMenu: function()
                 menuItem.setAttribute("label", title);
               }
 
-              // XXX Why don't any of these work on Mac!?
-              // XXX This is currently being handled via the "command"
-              //     attribute of the menupopup that contains the menu
-              //menuItem.addEventListener("command", selectTab, false);
-              //menuItem.setAttribute("oncommand", "selectTab();");
-              //menuItem.setAttribute("command", "selectTab();");
-              //menuItem.addEventListener("click", selectTab, false);
+              menuItem.addEventListener("command", tabsmenu.selectTab, false);
 
               menu.appendChild(menuItem);
             }
