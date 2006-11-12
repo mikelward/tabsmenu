@@ -8,7 +8,7 @@
             title="&tabsmenu-prefwindow.title;"
             buttons="accept,cancel">
 
-  <prefpane>
+  <prefpane id="tabsmenu-prefwindow-mainpane">
     <preferences>
       <preference id="tabsmenu-showicons"
                   name="extensions.tabsmenu.showicons"
