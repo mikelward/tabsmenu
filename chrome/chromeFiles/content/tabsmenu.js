@@ -140,14 +140,29 @@ createTabsMenu: function()
           if (browser)
           {
             var tabNumber = i + 1;
-            var defaultTitle;
-            if (tbstringbundle)
+            var title;
+            if (browser.contentTitle)
             {
-              defaultTitle = tbstringbundle.getString("tabs.untitled");
+              title = browser.contentTitle;
             }
-            defaultTitle = (defaultTitle) ? defaultTitle : "(Untitled)";
+            else if (browser.currentURI)
+            {
+              title = browser.currentURI.spec;
+            }
 
-            var title = (browser.contentTitle) ? browser.contentTitle : defaultTitle;
+            if (!title || title == "about:blank")
+            {
+              var defaultTitle = "(Untitled)";
+              if (tbstringbundle)
+              {
+                var defaultTitle = tbstringbundle.getString("tabs.untitled");
+                if (!defaultTitle)
+                {
+                  tabsmenu.logMessage("Cannot looking tabs.untitled string");
+                }
+              }
+              title = defaultTitle;
+            }
 
             var menuItem = document.createElement("menuitem");
             if (menuItem)
@@ -303,7 +318,7 @@ showActions: function()
                           .getBranch("extensions.tabsmenu.");
     return prefs.getBoolPref("showactions");
   } 
-  catch(e)
+  catch (e)
   {
     Components.reportError(e);
     return false;
@@ -321,7 +336,7 @@ showIcons: function()
                           .getBranch("extensions.tabsmenu.");
     return prefs.getBoolPref("showicons");
   } 
-  catch(e)
+  catch (e)
   {
     Components.reportError(e);
     return false;
@@ -340,7 +355,7 @@ showShortcuts: function()
                           .getBranch("extensions.tabsmenu.");
     return prefs.getBoolPref("showshortcuts");
   } 
-  catch(e)
+  catch (e)
   {
     Components.reportError(e);
     return false;
