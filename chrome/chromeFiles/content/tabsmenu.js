@@ -163,8 +163,6 @@ createTabsMenu: function()
                 menuItem.setAttribute("busy", tab.getAttribute("busy"));
               }
 
-              tab.addEventListener("DOMAttrModified", tabsmenu.updateItem, false);
-
               menuItem.addEventListener("command", tabsmenu.selectTab, false);
 
               menu.appendChild(menuItem);
@@ -319,48 +317,6 @@ showShortcuts: function()
     Components.reportError(e);
     return false;
   }
-},
-
-// Update the title and icon of an item in the Tabs Menu.
-// This is called when a tab's properties have changed,
-// for instance when it has finished loading and the title
-// is set to the page's true title.
-updateItem: function(event)
-{
-  tabsmenu.createTabsMenu();
-  /*
-  var target = event.target;
-  for (var i = 0; i < target.attributes.length; i++)
-  {
-    tabsmenu.logMessage("Attribute " + i + " name=" + target.attributes[i].name + " value=" + target.attributes[i].value);
-  }
-  var id = target.id;
-  tabsmenu.logMessage("Updating item " + target.label);
-  var item = document.getElementById(id);
-  if (item)
-  {
-    item.setAttribute("title", target.label);
-    if (item.hasAttribute("image"))
-    {
-      item.setAttribute("image", target.getAttribute("image"));
-    }
-    if (target.hasAttribute("busy"))
-    {
-      item.setAttribute("busy", target.getAttribute("busy"));
-    }
-    else
-    {
-      if (item.hasAttribute("busy"))
-      {
-        item.removeAttribute("busy");
-      }
-    }
-  }
-  else
-  {
-    tabsmenu.logMessage("Cannot get menu item " + id);
-  }
-  */
 }
 
 }
