@@ -132,7 +132,11 @@ createTabsMenu: function()
               if (tabsmenu.showIcons())
               {
                 menuItem.setAttribute("class", "menuitem-iconic");
-                menuItem.setAttribute("image", tab.getAttribute("image"));
+                if (tab.hasAttribute("image"))
+                {
+                  var image = tab.getAttribute("image");
+                  menuItem.setAttribute("image", image);
+                }
                 menuItem.setAttribute("current", tab.getAttribute("selected"));
               }
               else
@@ -160,7 +164,8 @@ createTabsMenu: function()
 
               if (tab.hasAttribute("busy"))
               {
-                menuItem.setAttribute("busy", tab.getAttribute("busy"));
+                var busy = tab.getAttribute("busy");
+                menuItem.setAttribute("busy", busy);
               }
 
               menuItem.addEventListener("command", tabsmenu.selectTab, false);
