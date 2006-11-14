@@ -4,12 +4,27 @@
   width: 16px;
   height: 16px;
   list-style-image: url(chrome://global/skin/icons/folder-item.png);
+  /*
+   * Mac Pinstripe
+   * list-style-image: url("chrome://global/skin/icons/small-globe-sunken.png");
+   * list-style-image: url("chrome://global/skin/icons/small-globe-sunken-grey.png");
+   *
+   * See http://lxr.mozilla.org/mozilla1.8/source/toolkit/themes/pinstripe/global/browser.css#14
+   *
+   * Consider using class tab-icon-image for these elements so that we inherit the Firefox theme
+   */
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
 #tabs-menu .menuitem-iconic[busy] .menu-iconic-icon
 {
   list-style-image: url("chrome://global/skin/throbber/Throbber-small.gif") !important;
+  /*
+   * Mac Pinstripe
+   * list-style-image: url("chrome://global/skin/icons/loading_16_grey.gif") !important;
+   *
+   * See above comments
+   */
 }
 
 #tabs-menu .menuitem-iconic 
