@@ -1,6 +1,7 @@
 content tabsmenu chrome/chromeFiles/content/
 content platform chrome/chromeFiles/platform/ platform
 overlay chrome://browser/content/browser.xul chrome://tabsmenu/content/tabsmenu.xul
+locale tabsmenu cs-CZ chrome/chromeFiles/locale/cs-CZ/
 locale tabsmenu da-DK chrome/chromeFiles/locale/da-DK/
 locale tabsmenu de-DE chrome/chromeFiles/locale/de-DE/
 locale tabsmenu en-US chrome/chromeFiles/locale/en-US/
@@ -12,7 +13,9 @@ locale tabsmenu hu-HU chrome/chromeFiles/locale/hu-HU/
 locale tabsmenu it-IT chrome/chromeFiles/locale/it-IT/
 locale tabsmenu nl-NL chrome/chromeFiles/locale/nl-NL/
 locale tabsmenu nn-NO chrome/chromeFiles/locale/nn-NO/
+locale tabsmenu pl-PL chrome/chromeFiles/locale/pl-PL/
 locale tabsmenu pt-BR chrome/chromeFiles/locale/pt-BR/
 locale tabsmenu pt-PT chrome/chromeFiles/locale/pt-PT/
 locale tabsmenu sk-SK chrome/chromeFiles/locale/sk-SK/
 locale tabsmenu tr-TR chrome/chromeFiles/locale/tr-TR/
+locale tabsmenu zh-TW chrome/chromeFiles/locale/zh-TW/

@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "Tabs Menu 選項">
+<!ENTITY tabsmenu-prefwindow.showactions "顯示這些指令">
+<!ENTITY tabsmenu-prefwindow.menustyle "項目樣式">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "數字鍵盤快捷鍵">
+<!ENTITY tabsmenu-prefwindow.pageicons "頁面圖示">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "項目符號">
+<!ENTITY tabsmenu-prefwindow.enabled "開">
+<!ENTITY tabsmenu-prefwindow.disabled "關">

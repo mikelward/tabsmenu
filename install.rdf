@@ -28,16 +28,20 @@
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
     <em:contributor>Régis Caspar</em:contributor>
+    <em:translator>The Zero (cs-CZ)</em:translator>
     <em:translator>Okaryn (fr-FR)</em:translator>
     <em:translator>Krcko (hr-HR)</em:translator>
     <em:translator>markh (nl-NL)</em:translator>
+    <em:translator>damian (pl-PL)</em:translator>
     <em:translator>wladow (sk-SK)</em:translator>
+    <em:translator>kennith (zh-TW)</em:translator>
     <em:optionsURL>chrome://tabsmenu/content/tabsmenu-prefs.xul</em:optionsURL>
     <em:homepageURL>http://mikelward.com/projects/firefox</em:homepageURL>
 
     <em:file>
       <Description about="urn:mozilla:extension:file:chromeFiles">
         <em:package>content/</em:package>
+        <em:locale>locale/cs-CZ/</em:locale>
         <em:locale>locale/da-DK/</em:locale>
         <em:locale>locale/de-DE/</em:locale>
         <em:locale>locale/en-US/</em:locale>
@@ -49,10 +53,12 @@
         <em:locale>locale/it-IT/</em:locale>
         <em:locale>locale/nl-NL/</em:locale>
         <em:locale>locale/nn-NO/</em:locale>
+        <em:locale>locale/pl-PL/</em:locale>
         <em:locale>locale/pt-BR/</em:locale>
         <em:locale>locale/pt-PT/</em:locale>
         <em:locale>locale/sk-SK/</em:locale>
         <em:locale>locale/tr-TR/</em:locale>
+        <em:locale>locale/zh-TW/</em:locale>
       </Description>
     </em:file>
 
