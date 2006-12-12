@@ -137,6 +137,18 @@ createTabsMenu: function()
                   var image = tab.getAttribute("image");
                   menuItem.setAttribute("image", image);
                 }
+                else
+                {
+                  try
+                  {
+                    var image = tabsmenu.getDefaultTabIcon();
+                    menuItem.setAttribute("image", image);
+                  }
+                  catch (e)
+                  {
+                    tabsmenu.logMessage("Cannot get default tab icon");
+                  }
+                }
                 menuItem.setAttribute("current", tab.getAttribute("selected"));
               }
               else
@@ -251,6 +263,23 @@ dumpTabs: function()
   else
   {
     tabsmenu.logMessage("Cannot get global browser");
+  }
+},
+
+// Get the location of the icon to show if a tab doesn't have its own.
+getDefaultTabIcon: function()
+{
+  try
+  {
+    var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                          .getService(Components.interfaces.nsIPrefService)
+                          .getBranch("extensions.tabsmenu.");
+    return prefs.getCharPref("defaulttabicon");
+  }
+  catch (e)
+  {
+    Components.reportError(e);
+    return false;
   }
 },
 
