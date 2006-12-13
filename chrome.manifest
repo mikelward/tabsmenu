@@ -1,5 +1,4 @@
 content tabsmenu chrome/chromeFiles/content/
-content platform chrome/chromeFiles/platform/ platform
 overlay chrome://browser/content/browser.xul chrome://tabsmenu/content/tabsmenu.xul
 locale tabsmenu cs-CZ chrome/chromeFiles/locale/cs-CZ/
 locale tabsmenu da-DK chrome/chromeFiles/locale/da-DK/
