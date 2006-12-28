@@ -30,6 +30,7 @@
     <em:contributor>Régis Caspar</em:contributor>
     <em:translator>The Zero (cs-CZ)</em:translator>
     <em:translator>Okaryn (fr-FR)</em:translator>
+    <em:translator>siiie (he-IL)</em:translator>
     <em:translator>Krcko (hr-HR)</em:translator>
     <em:translator>markh (nl-NL)</em:translator>
     <em:translator>damian (pl-PL)</em:translator>
@@ -49,6 +50,7 @@
         <em:locale>locale/es-ES/</em:locale>
         <em:locale>locale/fi-FI/</em:locale>
         <em:locale>locale/fr-FR/</em:locale>
+        <em:locale>locale/he-IL/</em:locale>
         <em:locale>locale/hr-HR/</em:locale>
         <em:locale>locale/hu-HU/</em:locale>
         <em:locale>locale/it-IT/</em:locale>
