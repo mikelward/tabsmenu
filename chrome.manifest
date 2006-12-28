@@ -19,4 +19,5 @@ locale tabsmenu pt-PT chrome/chromeFiles/locale/pt-PT/
 locale tabsmenu ro-RO chrome/chromeFiles/locale/ro-RO/
 locale tabsmenu sk-SK chrome/chromeFiles/locale/sk-SK/
 locale tabsmenu tr-TR chrome/chromeFiles/locale/tr-TR/
+locale tabsmenu zh-CN chrome/chromeFiles/locale/zh-CN/
 locale tabsmenu zh-TW chrome/chromeFiles/locale/zh-TW/

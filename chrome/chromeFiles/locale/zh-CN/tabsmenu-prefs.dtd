@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "标签菜单 选项">
+<!ENTITY tabsmenu-prefwindow.showactions "显示这些命令">
+<!ENTITY tabsmenu-prefwindow.menustyle "菜单类型">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "数字键盘快捷键">
+<!ENTITY tabsmenu-prefwindow.pageicons "页图标">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "Radio 按钮">
+<!ENTITY tabsmenu-prefwindow.enabled "开">
+<!ENTITY tabsmenu-prefwindow.disabled "关">

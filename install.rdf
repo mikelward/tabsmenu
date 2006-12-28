@@ -36,6 +36,7 @@
     <em:translator>damian (pl-PL)</em:translator>
     <em:translator>dan.lungescu (ro-RO)</em:translator>
     <em:translator>wladow (sk-SK)</em:translator>
+    <em:translator>rickcart (zh-CN)</em:translator>
     <em:translator>kennith (zh-TW)</em:translator>
     <em:optionsURL>chrome://tabsmenu/content/tabsmenu-prefs.xul</em:optionsURL>
     <em:homepageURL>http://mikelward.com/projects/firefox</em:homepageURL>
@@ -61,6 +62,7 @@
         <em:locale>locale/pt-PT/</em:locale>
         <em:locale>locale/sk-SK/</em:locale>
         <em:locale>locale/tr-TR/</em:locale>
+        <em:locale>locale/zh-CN/</em:locale>
         <em:locale>locale/zh-TW/</em:locale>
       </Description>
     </em:file>
