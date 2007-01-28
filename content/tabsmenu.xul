@@ -13,12 +13,24 @@
 
   <script type="application/x-javascript"
           src="chrome://tabsmenu/content/tabsmenu.js"/>
+  <script type="application/x-javascript">
+    <![CDATA[
+      function tabsmenuInit () {
+        var tasks = document.getElementById("tasksMenu");
+        var tabs  = document.getElementById("tabs-menu");
+        if (tasks && tabs) {
+          tasks.parentNode.insertBefore(tabs, tasks.nextSibling);
+        }
+      }
+      window.addEventListener("load", tabsmenuInit, false);
+    ]]>
+  </script>
 
   <menubar id="main-menubar">
     <menu id="tabs-menu"
           label="&tabs-menu.label;"
           accesskey="&tabs-menu.accesskey;"
-          insertafter="tools-menu">
+          insertafter="tools-menu,tasksMenu">
       <menupopup id="menu_TabsPopup"
                  onpopupshowing="tabsmenu.createTabsMenu(this)"/>
     </menu>

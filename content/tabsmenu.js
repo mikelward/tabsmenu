@@ -204,6 +204,24 @@ createTabsMenu: function()
     {
       tabsmenu.logMessage("Cannot get global browser");
     }
+    var prefsItem = document.getElementById("menu_preferences");
+    if (prefsItem)
+    {
+      // SeaMonkey Only
+      try
+      {
+        menu.appendChild(actionSeparator.cloneNode(true));
+        prefsItem = prefsItem.cloneNode(true);
+        var prefsCommand = 'openDialog("chrome://tabsmenu/content/tabsmenu-prefs.xul", "", "chrome,titlebar,toolbar,centerscreen,resizable,dialog=no");'
+        //prefsItem.setAttribute("oncommand", prefsCommand);
+        prefsItem.setAttribute("command", prefsCommand);
+        menu.appendChild(prefsItem);
+      }
+      catch (e)
+      {
+        tabsmenu.logMessage("Cannot create Preferences item");
+      }
+    }
   }
   else
   {
@@ -227,7 +245,7 @@ destroyTabsMenu: function()
       {
         menu.removeChild(node);
       }
-      catch(e)
+      catch (e)
       {
         tabsmenu.logMessage("Failed to remove menu item " + tabNumber + ": " + label);
       }
@@ -308,7 +326,7 @@ showActions: function()
                           .getService(Components.interfaces.nsIPrefService)
                           .getBranch("extensions.tabsmenu.");
     return prefs.getBoolPref("showactions");
-  } 
+  }
   catch (e)
   {
     Components.reportError(e);
@@ -326,7 +344,7 @@ showIcons: function()
                           .getService(Components.interfaces.nsIPrefService)
                           .getBranch("extensions.tabsmenu.");
     return prefs.getBoolPref("showicons");
-  } 
+  }
   catch (e)
   {
     Components.reportError(e);
@@ -345,7 +363,7 @@ showShortcuts: function()
                           .getService(Components.interfaces.nsIPrefService)
                           .getBranch("extensions.tabsmenu.");
     return prefs.getBoolPref("showshortcuts");
-  } 
+  }
   catch (e)
   {
     Components.reportError(e);

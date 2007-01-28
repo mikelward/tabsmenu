@@ -1,23 +1,24 @@
-content tabsmenu chrome/chromeFiles/content/
+content tabsmenu jar:chrome/tabsmenu.jar!/content/
 overlay chrome://browser/content/browser.xul chrome://tabsmenu/content/tabsmenu.xul
-locale tabsmenu cs-CZ chrome/chromeFiles/locale/cs-CZ/
-locale tabsmenu da-DK chrome/chromeFiles/locale/da-DK/
-locale tabsmenu de-DE chrome/chromeFiles/locale/de-DE/
-locale tabsmenu en-US chrome/chromeFiles/locale/en-US/
-locale tabsmenu es-ES chrome/chromeFiles/locale/es-ES/
-locale tabsmenu fi-FI chrome/chromeFiles/locale/fi-FI/
-locale tabsmenu fr-FR chrome/chromeFiles/locale/fr-FR/
-locale tabsmenu he-IL chrome/chromeFiles/locale/he-IL/
-locale tabsmenu hr-HR chrome/chromeFiles/locale/hr-HR/
-locale tabsmenu hu-HU chrome/chromeFiles/locale/hu-HU/
-locale tabsmenu it-IT chrome/chromeFiles/locale/it-IT/
-locale tabsmenu nl-NL chrome/chromeFiles/locale/nl-NL/
-locale tabsmenu nn-NO chrome/chromeFiles/locale/nn-NO/
-locale tabsmenu pl-PL chrome/chromeFiles/locale/pl-PL/
-locale tabsmenu pt-BR chrome/chromeFiles/locale/pt-BR/
-locale tabsmenu pt-PT chrome/chromeFiles/locale/pt-PT/
-locale tabsmenu ro-RO chrome/chromeFiles/locale/ro-RO/
-locale tabsmenu sk-SK chrome/chromeFiles/locale/sk-SK/
-locale tabsmenu tr-TR chrome/chromeFiles/locale/tr-TR/
-locale tabsmenu zh-CN chrome/chromeFiles/locale/zh-CN/
-locale tabsmenu zh-TW chrome/chromeFiles/locale/zh-TW/
+overlay chrome://navigator/content/navigator.xul chrome://tabsmenu/content/tabsmenu.xul
+locale tabsmenu cs-CZ jar:chrome/tabsmenu.jar!/locale/cs-CZ/
+locale tabsmenu da-DK jar:chrome/tabsmenu.jar!/locale/da-DK/
+locale tabsmenu de-DE jar:chrome/tabsmenu.jar!/locale/de-DE/
+locale tabsmenu en-US jar:chrome/tabsmenu.jar!/locale/en-US/
+locale tabsmenu es-ES jar:chrome/tabsmenu.jar!/locale/es-ES/
+locale tabsmenu fi-FI jar:chrome/tabsmenu.jar!/locale/fi-FI/
+locale tabsmenu fr-FR jar:chrome/tabsmenu.jar!/locale/fr-FR/
+locale tabsmenu he-IL jar:chrome/tabsmenu.jar!/locale/he-IL/
+locale tabsmenu hr-HR jar:chrome/tabsmenu.jar!/locale/hr-HR/
+locale tabsmenu hu-HU jar:chrome/tabsmenu.jar!/locale/hu-HU/
+locale tabsmenu it-IT jar:chrome/tabsmenu.jar!/locale/it-IT/
+locale tabsmenu nl-NL jar:chrome/tabsmenu.jar!/locale/nl-NL/
+locale tabsmenu nn-NO jar:chrome/tabsmenu.jar!/locale/nn-NO/
+locale tabsmenu pl-PL jar:chrome/tabsmenu.jar!/locale/pl-PL/
+locale tabsmenu pt-BR jar:chrome/tabsmenu.jar!/locale/pt-BR/
+locale tabsmenu pt-PT jar:chrome/tabsmenu.jar!/locale/pt-PT/
+locale tabsmenu ro-RO jar:chrome/tabsmenu.jar!/locale/ro-RO/
+locale tabsmenu sk-SK jar:chrome/tabsmenu.jar!/locale/sk-SK/
+locale tabsmenu tr-TR jar:chrome/tabsmenu.jar!/locale/tr-TR/
+locale tabsmenu zh-CN jar:chrome/tabsmenu.jar!/locale/zh-CN/
+locale tabsmenu zh-TW jar:chrome/tabsmenu.jar!/locale/zh-TW/
