@@ -11,6 +11,7 @@ locale tabsmenu fr-FR jar:chrome/tabsmenu.jar!/locale/fr-FR/
 locale tabsmenu he-IL jar:chrome/tabsmenu.jar!/locale/he-IL/
 locale tabsmenu hr-HR jar:chrome/tabsmenu.jar!/locale/hr-HR/
 locale tabsmenu hu-HU jar:chrome/tabsmenu.jar!/locale/hu-HU/
+locale tabsmenu ko-KR jar:chrome/tabsmenu.jar!/locale/ko-KR/
 locale tabsmenu it-IT jar:chrome/tabsmenu.jar!/locale/it-IT/
 locale tabsmenu nl-NL jar:chrome/tabsmenu.jar!/locale/nl-NL/
 locale tabsmenu nn-NO jar:chrome/tabsmenu.jar!/locale/nn-NO/

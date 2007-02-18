@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "Tabs Menu 설정">
+<!ENTITY tabsmenu-prefwindow.showactions "아래 명령 보임">
+<!ENTITY tabsmenu-prefwindow.menustyle "메뉴 스타일">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "숫자 자판 단축키">
+<!ENTITY tabsmenu-prefwindow.pageicons "페이지 아이콘">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "라디오 버튼">
+<!ENTITY tabsmenu-prefwindow.enabled "보임">
+<!ENTITY tabsmenu-prefwindow.disabled "감춤">
