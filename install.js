@@ -6,7 +6,7 @@
 
 // Editable Items Begin
 var displayName         = "Tabs Menu"; // The name displayed to the user (don't include the version)
-var version             = "1.4.0";
+var version             = "1.4.2";
 var name                = "tabsmenu"; // The leafname of the JAR file (without the .jar part)
 
 // The following three sets of variables tell this installer script how your
