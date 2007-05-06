@@ -204,12 +204,18 @@ createTabsMenu: function()
     {
       tabsmenu.logMessage("Cannot get global browser");
     }
+    /*
+     * This only shows up when the new tab and close tab items are also shown
+     * (which creates the actionSeparator that this part relies on).
+     *
+     * I'm not sure this is desirable, so I'm going to disable it temporarily.
+     */
+    /*
     var prefsItem = document.getElementById("menu_preferences");
     if (prefsItem)
     {
       try
       {
-        // XXX Make sure this works in SeaMonkey
         menu.appendChild(actionSeparator.cloneNode(true));
         prefsItem = prefsItem.cloneNode(true);
         var attrs = prefsItem.attributes;
@@ -229,6 +235,7 @@ createTabsMenu: function()
         tabsmenu.logMessage("Cannot create Preferences item");
       }
     }
+    */
   }
   else
   {
