@@ -207,14 +207,21 @@ createTabsMenu: function()
     var prefsItem = document.getElementById("menu_preferences");
     if (prefsItem)
     {
-      // SeaMonkey Only
       try
       {
+        // XXX Make sure this works in SeaMonkey
         menu.appendChild(actionSeparator.cloneNode(true));
         prefsItem = prefsItem.cloneNode(true);
-        var prefsCommand = 'openDialog("chrome://tabsmenu/content/tabsmenu-prefs.xul", "", "chrome,titlebar,toolbar,centerscreen,resizable,dialog=no");'
-        //prefsItem.setAttribute("oncommand", prefsCommand);
-        prefsItem.setAttribute("command", prefsCommand);
+        var attrs = prefsItem.attributes;
+        var i, l;
+        l = attrs.length;
+        for (var i = 0; i < l; i++)
+        {
+          tabsmenu.logMessage("attribute " + i + ": " + attrs[i].name + "=" + attrs[i].value);
+        }
+        //prefsItem.addEventListener("command", tabsmenu.openPreferences, false);
+        // Needs to be oncommand to override action from cloned node
+        prefsItem.setAttribute("oncommand", "tabsmenu.openPreferences()");
         menu.appendChild(prefsItem);
       }
       catch (e)
@@ -369,6 +376,12 @@ showShortcuts: function()
     Components.reportError(e);
     return false;
   }
+},
+
+// Display the preferences dialog box.
+openPreferences: function()
+{
+    window.openDialog("chrome://tabsmenu/content/tabsmenu-prefs.xul", "", "chrome,titlebar,toolbar,centerscreen,resizable,dialog=no");
 }
 
 }
