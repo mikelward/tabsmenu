@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "Параметры Tabs Menu">
+<!ENTITY tabsmenu-prefwindow.showactions "Показать Команды">
+<!ENTITY tabsmenu-prefwindow.menustyle "Вид Меню">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "Числовые Горячие Клавиши">
+<!ENTITY tabsmenu-prefwindow.pageicons "Иконки Страниц">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "Переключатель">
+<!ENTITY tabsmenu-prefwindow.enabled "Включить">
+<!ENTITY tabsmenu-prefwindow.disabled "Выключить">

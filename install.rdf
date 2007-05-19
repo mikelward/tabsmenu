@@ -12,12 +12,12 @@
     <!-- This package is an extension -->
     <em:type>2</em:type>
 
-    <!-- This is an extension for Firefox 1.5 to 3.0 Alpha 4 -->
+    <!-- This is an extension for Firefox 1.5 to 3.0 Alpha 5 -->
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>1.5</em:minVersion>
-        <em:maxVersion>3.0a4</em:maxVersion>
+        <em:maxVersion>3.0a5</em:maxVersion>
       </Description>
     </em:targetApplication>
 
@@ -32,7 +32,7 @@
 
     <!-- Information about this package -->
     <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
-    <em:version>1.4.2</em:version>
+    <em:version>1.4.3</em:version>
     <em:name>Tabs Menu</em:name>
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
@@ -46,6 +46,7 @@
     <em:translator>markh (nl-NL)</em:translator>
     <em:translator>damian (pl-PL)</em:translator>
     <em:translator>dan.lungescu (ro-RO)</em:translator>
+    <em:translator>exlex (ru-RU)</em:translator>
     <em:translator>wladow (sk-SK)</em:translator>
     <em:translator>rickcart (zh-CN)</em:translator>
     <em:translator>kennith (zh-TW)</em:translator>
@@ -65,13 +66,15 @@
         <em:locale>locale/he-IL/</em:locale>
         <em:locale>locale/hr-HR/</em:locale>
         <em:locale>locale/hu-HU/</em:locale>
-        <em:locale>locale/ko-KR/</em:locale>
         <em:locale>locale/it-IT/</em:locale>
+        <em:locale>locale/ko-KR/</em:locale>
         <em:locale>locale/nl-NL/</em:locale>
         <em:locale>locale/nn-NO/</em:locale>
         <em:locale>locale/pl-PL/</em:locale>
         <em:locale>locale/pt-BR/</em:locale>
         <em:locale>locale/pt-PT/</em:locale>
+        <em:locale>locale/ro-RO/</em:locale>
+        <em:locale>locale/ru-RU/</em:locale>
         <em:locale>locale/sk-SK/</em:locale>
         <em:locale>locale/tr-TR/</em:locale>
         <em:locale>locale/zh-CN/</em:locale>
