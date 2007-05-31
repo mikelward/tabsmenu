@@ -42,6 +42,7 @@
     <em:translator>Okaryn (fr-FR)</em:translator>
     <em:translator>siiie (he-IL)</em:translator>
     <em:translator>Krcko (hr-HR)</em:translator>
+    <em:translator>drry (jp-JP)</em:translator>
     <em:translator>netaras (ko-KR)</em:translator>
     <em:translator>markh (nl-NL)</em:translator>
     <em:translator>damian (pl-PL)</em:translator>
@@ -67,6 +68,7 @@
         <em:locale>locale/hr-HR/</em:locale>
         <em:locale>locale/hu-HU/</em:locale>
         <em:locale>locale/it-IT/</em:locale>
+        <em:locale>locale/jp-JP/</em:locale>
         <em:locale>locale/ko-KR/</em:locale>
         <em:locale>locale/nl-NL/</em:locale>
         <em:locale>locale/nn-NO/</em:locale>

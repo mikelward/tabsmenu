@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "Tabs Menu オプション">
+<!ENTITY tabsmenu-prefwindow.showactions "表示するコマンド">
+<!ENTITY tabsmenu-prefwindow.menustyle "メニュー形式">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "数字キーボードショートカット">
+<!ENTITY tabsmenu-prefwindow.pageicons "ページアイコン">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "ラジオボタン">
+<!ENTITY tabsmenu-prefwindow.enabled "オン">
+<!ENTITY tabsmenu-prefwindow.disabled "オフ">
