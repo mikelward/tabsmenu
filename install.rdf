@@ -21,18 +21,18 @@
       </Description>
     </em:targetApplication>
 
-    <!-- This is an extension for SeaMonkey 1.0 to 1.5 Alpha -->
+    <!-- This is an extension for SeaMonkey 1.0 to Suiterunner 2.0 Alpha 1 -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
         <em:minVersion>1.0</em:minVersion>
-        <em:maxVersion>1.5a</em:maxVersion>
+        <em:maxVersion>2.0a1</em:maxVersion>
       </Description>
     </em:targetApplication>
 
     <!-- Information about this package -->
     <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
-    <em:version>1.4.3</em:version>
+    <em:version>1.4.4</em:version>
     <em:name>Tabs Menu</em:name>
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
