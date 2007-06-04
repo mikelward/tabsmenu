@@ -204,38 +204,40 @@ createTabsMenu: function()
     {
       tabsmenu.logMessage("Cannot get global browser");
     }
-    /*
-     * This only shows up when the new tab and close tab items are also shown
-     * (which creates the actionSeparator that this part relies on).
-     *
-     * I'm not sure this is desirable, so I'm going to disable it temporarily.
-     */
-    /*
-    var prefsItem = document.getElementById("menu_preferences");
-    if (prefsItem)
+
+    if (tabsmenu.showPreferences())
     {
       try
       {
-        menu.appendChild(actionSeparator.cloneNode(true));
-        prefsItem = prefsItem.cloneNode(true);
-        var attrs = prefsItem.attributes;
-        var i, l;
-        l = attrs.length;
-        for (var i = 0; i < l; i++)
+        var prefsSeparator = document.createElement("menuseparator");
+        if (prefsSeparator)
         {
-          tabsmenu.logMessage("attribute " + i + ": " + attrs[i].name + "=" + attrs[i].value);
+          menu.appendChild(prefsSeparator);
+
+          var prefsItem = document.createElement("menuitem");
+          if (prefsItem)
+          {
+            var label;
+            var stockPrefsItem = document.getElementById("menu_preferences");
+            if (stockPrefsItem)
+            {
+              label = stockPrefsItem.getAttribute("label");
+            }
+            else
+            {
+              label = "Preferences";
+            }
+            prefsItem.setAttribute("label", label);
+            prefsItem.addEventListener("command", tabsmenu.openPreferences, false);
+            menu.appendChild(prefsItem);
+          }
         }
-        //prefsItem.addEventListener("command", tabsmenu.openPreferences, false);
-        // Needs to be oncommand to override action from cloned node
-        prefsItem.setAttribute("oncommand", "tabsmenu.openPreferences()");
-        menu.appendChild(prefsItem);
       }
       catch (e)
       {
         tabsmenu.logMessage("Cannot create Preferences item");
       }
     }
-    */
   }
   else
   {
@@ -364,6 +366,18 @@ showIcons: function()
     Components.reportError(e);
     return false;
   }
+},
+
+// Check whether the Preferences item should appear in the menu.
+showPreferences: function()
+{
+  // Show the Preferences in SeaMonkey only
+  // This is because it doesn't yet have an easy way of changing
+  // extension preferences, unlike Firefox
+  const SEAMONKEY_ID = "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}";
+      var nsIXULAppInfo = Components.classes["@mozilla.org/xre/app-info;1"]
+                                    .getService(Components.interfaces.nsIXULAppInfo);
+      return (nsIXULAppInfo.ID == SEAMONKEY_ID);
 },
 
 // Check whether the user wants the tab's title to be prefixed
