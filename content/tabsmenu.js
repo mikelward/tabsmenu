@@ -371,6 +371,9 @@ showIcons: function()
 // Check whether the Preferences item should appear in the menu.
 showPreferences: function()
 {
+  return false;
+
+  /*
   // Show the Preferences in SeaMonkey only
   // This is because it doesn't yet have an easy way of changing
   // extension preferences, unlike Firefox
@@ -378,6 +381,7 @@ showPreferences: function()
       var nsIXULAppInfo = Components.classes["@mozilla.org/xre/app-info;1"]
                                     .getService(Components.interfaces.nsIXULAppInfo);
       return (nsIXULAppInfo.ID == SEAMONKEY_ID);
+  */
 },
 
 // Check whether the user wants the tab's title to be prefixed
