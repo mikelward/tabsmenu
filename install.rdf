@@ -30,6 +30,15 @@
       </Description>
     </em:targetApplication>
 
+    <!-- This is an extension for Flock 0.4 to 0.8 -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{a463f10c-3994-11da-9945-000d60ca027b}</em:id>
+        <em:minVersion>0.4</em:minVersion>
+        <em:maxVersion>0.8</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
     <!-- Information about this package -->
     <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
     <em:version>1.4.5</em:version>
