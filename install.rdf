@@ -41,7 +41,7 @@
 
     <!-- Information about this package -->
     <em:id>{dc5d9a10-2736-11da-8cd6-0800200c9a66}</em:id>
-    <em:version>1.4.6</em:version>
+    <em:version>1.4.7</em:version>
     <em:name>Tabs Menu</em:name>
     <em:description>Adds a drop-down list of tabs to the main menu bar.</em:description>
     <em:creator>Mikel Ward</em:creator>
@@ -51,7 +51,7 @@
     <em:translator>Okaryn (fr-FR)</em:translator>
     <em:translator>siiie (he-IL)</em:translator>
     <em:translator>Krcko (hr-HR)</em:translator>
-    <em:translator>drry (jp-JP)</em:translator>
+    <em:translator>drry (ja-JP)</em:translator>
     <em:translator>netaras (ko-KR)</em:translator>
     <em:translator>markh (nl-NL)</em:translator>
     <em:translator>damian (pl-PL)</em:translator>
@@ -77,7 +77,7 @@
         <em:locale>locale/hr-HR/</em:locale>
         <em:locale>locale/hu-HU/</em:locale>
         <em:locale>locale/it-IT/</em:locale>
-        <em:locale>locale/jp-JP/</em:locale>
+        <em:locale>locale/ja-JP/</em:locale>
         <em:locale>locale/ko-KR/</em:locale>
         <em:locale>locale/nl-NL/</em:locale>
         <em:locale>locale/nn-NO/</em:locale>

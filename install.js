@@ -6,7 +6,7 @@
 
 // Editable Items Begin
 var displayName         = "Tabs Menu"; // The name displayed to the user (don't include the version)
-var version             = "1.4.2";
+var version             = "1.4.7";
 var name                = "tabsmenu"; // The leafname of the JAR file (without the .jar part)
 
 // The following three sets of variables tell this installer script how your
@@ -35,6 +35,7 @@ var locales             = new Array( "en-US",
                                      "hr-HR",
                                      "hu-HU",
                                      "it-IT",
+									 "ja-JP",
                                      "nl-NL",
                                      "nn-NO",
                                      "pl-PL",
