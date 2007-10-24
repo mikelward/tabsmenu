@@ -47,7 +47,9 @@
     <em:creator>Mikel Ward</em:creator>
     <em:contributor>Régis Caspar</em:contributor>
     <em:contributor>Philip Chee</em:contributor>
+    <em:translator>el_libre (ca-AD)</em:translator>
     <em:translator>The Zero (cs-CZ)</em:translator>
+    <em:translator>Sonickydon (el-GR)</em:translator>
     <em:translator>Okaryn (fr-FR)</em:translator>
     <em:translator>siiie (he-IL)</em:translator>
     <em:translator>Krcko (hr-HR)</em:translator>
@@ -66,9 +68,11 @@
     <em:file>
       <Description about="urn:mozilla:extension:file:tabsmenu.jar">
         <em:package>content/</em:package>
+        <em:locale>locale/ca-AD/</em:locale>
         <em:locale>locale/cs-CZ/</em:locale>
         <em:locale>locale/da-DK/</em:locale>
         <em:locale>locale/de-DE/</em:locale>
+        <em:locale>locale/el-GR/</em:locale>
         <em:locale>locale/en-US/</em:locale>
         <em:locale>locale/es-ES/</em:locale>
         <em:locale>locale/fi-FI/</em:locale>

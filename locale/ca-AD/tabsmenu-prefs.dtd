@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "Opcions de Tabs Menu">
+<!ENTITY tabsmenu-prefwindow.showactions "Mostra aquestes comandes">
+<!ENTITY tabsmenu-prefwindow.menustyle "Estil de menú">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "Dreceres de teclat numèriques">
+<!ENTITY tabsmenu-prefwindow.pageicons "Icones de les pàgines">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "Botons de ràdio">
+<!ENTITY tabsmenu-prefwindow.enabled "Activat">
+<!ENTITY tabsmenu-prefwindow.disabled "Desactivat">

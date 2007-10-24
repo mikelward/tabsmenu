@@ -1,0 +1,8 @@
+<!ENTITY tabsmenu-prefwindow.title "Tabs Menu Options">
+<!ENTITY tabsmenu-prefwindow.showactions "Show These Commands">
+<!ENTITY tabsmenu-prefwindow.menustyle "Menu Style">
+<!ENTITY tabsmenu-prefwindow.showshortcuts "Numeric Keyboard Shortcuts">
+<!ENTITY tabsmenu-prefwindow.pageicons "Page Icons">
+<!ENTITY tabsmenu-prefwindow.radiobuttons "Radio Buttons">
+<!ENTITY tabsmenu-prefwindow.enabled "On">
+<!ENTITY tabsmenu-prefwindow.disabled "Off">
